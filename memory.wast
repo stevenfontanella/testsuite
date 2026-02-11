@@ -7,6 +7,10 @@
 (module (memory 1 256))
 (module definition (memory 65536))
 (module (memory 0 65536))
+(module (memory 0 0 shared))
+(module (memory 1 2 shared))
+
+(assert_invalid (module (memory 1 shared)) "shared memory must have maximum")
 
 (module (memory (data)) (func (export "memsize") (result i32) (memory.size)))
 (assert_return (invoke "memsize") (i32.const 0))

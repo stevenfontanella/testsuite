@@ -613,7 +613,7 @@
 (assert_malformed
   (module binary
       "\00asm" "\01\00\00\00"
-      "\04\03\01"                           ;; table section with one entry
+      "\04\04\01"                           ;; table section with one entry
       "\70"                                 ;; anyfunc
       "\08"                                 ;; malformed table limits flag
   )
@@ -665,6 +665,8 @@
   )
   "malformed limits flags"
 )
+
+;; Missing max
 (assert_malformed
   (module binary
       "\00asm" "\01\00\00\00"
@@ -674,6 +676,7 @@
   )
   "malformed limits flags"
 )
+
 (assert_malformed
   (module binary
       "\00asm" "\01\00\00\00"

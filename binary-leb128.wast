@@ -744,7 +744,8 @@
     "\1a"                             ;; drop
     "\0b"                             ;; end
   )
-  "integer too large"
+  ;; TODO: This changes to "integer too large" with memory64.
+  "integer representation too long"
 )
 (assert_malformed
   (module binary
@@ -763,7 +764,8 @@
     "\1a"                             ;; drop
     "\0b"                             ;; end
   )
-  "integer too large"
+  ;; TODO: This changes to "integer too large" with memory64.
+  "integer representation too long"
 )
 (assert_malformed
   (module binary
@@ -857,7 +859,8 @@
     "\82\80\80\80\80\80\80\80\80\10"  ;; offset 2 with unused bits set
     "\0b"                             ;; end
   )
-  "integer too large"
+  ;; TODO: This changes to "integer too large" with memory64.
+  "integer representation too long"
 )
 (assert_malformed
   (module binary
@@ -876,7 +879,8 @@
     "\82\80\80\80\80\80\80\80\80\40"  ;; offset 2 with some unused bits set
     "\0b"                             ;; end
   )
-  "integer too large"
+  ;; TODO: This changes to "integer too large" with memory64.
+  "integer representation too long"
 )
 ;; Signed LEB128s sign-extend
 (assert_malformed
